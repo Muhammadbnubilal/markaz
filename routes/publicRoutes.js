@@ -1,0 +1,14 @@
+const express = require('express');
+const router = express.Router();
+const publicController = require('../controllers/publicController');
+
+router.get('/', publicController.getHome);
+router.get('/about', publicController.getAbout);
+router.get('/programs', publicController.getPrograms);
+router.get('/facilities', publicController.getFacilities);
+router.get('/admission', publicController.getAdmission);
+router.post('/admission', publicController.postAdmission);
+router.get('/contact', publicController.getContact);
+router.post('/contact', publicController.postContact);
+
+module.exports = router;
