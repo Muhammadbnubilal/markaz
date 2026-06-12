@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Applications Panel</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"></head>
+<body class="bg-light">
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+        <h2 class="fw-bold text-success m-0">Student Entry Applications Panel</h2>
+        <a href="/admin/dashboard" class="btn btn-secondary btn-sm">Back to Stats</a>
+    </div>
+
+    <form action="/admin/applications" method="GET" class="row g-2 mb-4">
+        <div class="col-md-8">
+            <input type="text" name="search" class="form-control" value="<%= search %>" placeholder="Search by student full name or safe phone contacts...">
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success w-100">Search Logs</button>
+        </div>
+    </form>
+
+    <div class="table-responsive bg-white rounded shadow-sm p-3">
+        <table class="table table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Student Name</th>
+                    <th>Date of Birth</th>
+                    <th>Guardian Contact</th>
+                    <th>Program</th>
+                    <th>Madrasa Level</th>
+                    <th>Status</th>
+                    <th>Actions Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (applications && applications.length > 0) { %>
+                    <% applications.forEach(app => { %>
+                        <tr>
+                            <td><strong><%= app.full_name %></strong></td>
+                            <td><%= new Date(app.dob).toLocaleDateString() %></td>
+                            <td><%= app.parent_name %><br><small class="text-muted"><%= app.phone_number %></small></td>
+                            <td><span class="badge bg-secondary"><%= app.program_applied %></span></td>
+                            <td>Q: <%= app.quran_level %><br>R: <%= app.reading_level %></td>
+                            <td>
+                                <span class="badge <%= app.application_status === 'New' ? 'bg-primary' : app.application_status === 'Under Review' ? 'bg-warning text-dark' : app.application_status === 'Approved' ? 'bg-success' : 'bg-danger' %>">
+                                    <%= app.application_status %>
+                                </span>
+                            </td>
+                            <td>
+                                <form action="/admin/applications/update" method="POST" class="d-inline-block me-1">
+                                    <input type="hidden" name="id" value="<%= app.id %>">
+                                    <select name="status" class="form-select form-select-sm d-inline-block w-auto" onchange="this.form.submit()">
+                                        <option value="">-- Change Status --</option>
+                                        <option value="New">New</option>
+                                        <option value="Under Review">Under Review</option>
+                                        <option value="Approved">Approved</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </form>
+                                <form action="/admin/applications/delete" method="POST" class="d-inline-block" onsubmit="return confirm('Discard application record Permanently?')">
+                                    <input type="hidden" name="id" value="<%= app.id %>">
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                <% } else { %>
+                    <tr><td colspan="7" class="text-center text-muted py-4">No matching application submissions found.</td></tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

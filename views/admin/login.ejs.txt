@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-4 shadow-lg border-0" style="max-width: 400px; width: 100%;">
+        <div class="text-center mb-4">
+            <h3 class="text-success fw-bold m-0">Admin Area Access</h3>
+            <small class="text-muted">Authorized administrative staff checkpoint log</small>
+        </div>
+        <% if (errorMessage) { %>
+            <div class="alert alert-danger p-2 small border-0 text-center shadow-sm"><%= errorMessage %></div>
+        <% } %>
+        <form action="/admin/login" method="POST">
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Admin Username</label>
+                <input type="text" name="username" class="form-control" required autocomplete="off">
+            </div>
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Secret Key Password</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100 border-0" style="background-color: #0A5C36;">Secure Login Check</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

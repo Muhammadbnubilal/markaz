@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg custom-navbar sticky-top navbar-dark shadow">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="/images/logo.png" alt="Markaz Logo" height="45" class="me-2" onerror="this.src='https://placehold.co/45x45/0A5C36/D4AF37?text=Markaz'">
+      <div class="lh-sm">
+        <span class="d-block fw-bold text-white small">Markaz Imam Ahmad bin Hanbal</span>
+        <span class="text-warning text-uppercase tracking-wider" style="font-size: 0.65rem; font-weight: bold; letter-spacing: 1px;">Knowledge • Character • Faith</span>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link <%= activePage === 'home' ? 'active' : '' %>" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link <%= activePage === 'about' ? 'active' : '' %>" href="/about">About Us</a></li>
+        <li class="nav-item"><a class="nav-link <%= activePage === 'programs' ? 'active' : '' %>" href="/programs">Programs</a></li>
+        <li class="nav-item"><a class="nav-link <%= activePage === 'facilities' ? 'active' : '' %>" href="/facilities">Facilities</a></li>
+        <li class="nav-item"><a class="nav-link <%= activePage === 'admission' ? 'active' : '' %>" href="/admission">Admission</a></li>
+        <li class="nav-item"><a class="nav-link <%= activePage === 'contact' ? 'active' : '' %>" href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

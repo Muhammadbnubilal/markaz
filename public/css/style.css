@@ -1,0 +1,86 @@
+/* Color Strategy Palette Variables */
+:root {
+  --deep-green: #0A5C36;
+  --gold-accent: #D4AF37;
+  --bright-white: #FFFFFF;
+  --soft-light: #F4F7F5;
+  --dark-text: #2B302C;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark-text);
+  background-color: var(--bright-white);
+  overflow-x: hidden;
+}
+
+/* Navbar System Details */
+.custom-navbar {
+  background-color: var(--deep-green) !important;
+  border-bottom: 4px solid var(--gold-accent);
+  transition: all 0.3s linear;
+}
+
+.custom-navbar .nav-link {
+  color: var(--bright-white) !important;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: var(--gold-accent) !important;
+}
+
+/* Button UI Rules */
+.btn-gold {
+  background-color: var(--gold-accent);
+  color: var(--deep-green);
+  font-weight: bold;
+  border: 1px solid var(--gold-accent);
+}
+
+.btn-gold:hover {
+  background-color: var(--deep-green);
+  color: var(--gold-accent);
+  border: 1px solid var(--gold-accent);
+}
+
+/* Smooth Slider Animations & Image Scales */
+.zoom-frame {
+  overflow: hidden;
+  position: relative;
+}
+
+.zoom-frame img {
+  transition: transform 0.5s ease;
+}
+
+.zoom-frame:hover img {
+  transform: scale(1.08);
+}
+
+/* Text Callout Blocks */
+.section-accent-title {
+  color: var(--deep-green);
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-accent-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  background-color: var(--gold-accent);
+}
+
+/* Footer Section Structure */
+.footer-wrap {
+  background-color: #05331E;
+  color: var(--bright-white);
+  border-top: 5px solid var(--gold-accent);
+}

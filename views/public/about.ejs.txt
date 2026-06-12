@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container my-5">
+    <div class="row align-items-center g-5">
+        <div class="col-md-6">
+            <h2 class="section-accent-title mb-4">About Our Markaz</h2>
+            <p class="lead text-muted"><%= settings.about_page_text %></p>
+            <p>Our curriculum works carefully to ensure students grow intellectually while cultivating strong and virtuous characters that positively serve their families and neighboring societies.</p>
+            <div class="bg-light p-3 border-start border-success border-4 rounded mt-4">
+                <span class="fw-bold d-block text-success text-uppercase">Our Core Pillars</span>
+                <span class="text-muted">Knowledge • Character • Faith</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="zoom-frame rounded shadow">
+                <img src="<%= settings.hero_image_campus %>" class="img-fluid w-100" alt="Main Campus View" onerror="this.src='https://placehold.co/600x400/0A5C36/FFF?text=Campus+Photo'">
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

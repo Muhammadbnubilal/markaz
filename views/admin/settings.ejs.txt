@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Website Settings</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"></head>
+<body class="bg-light">
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+        <h2 class="fw-bold text-success m-0">Website Settings & Dynamic Text Panel</h2>
+        <a href="/admin/dashboard" class="btn btn-secondary btn-sm">Back to Dashboard</a>
+    </div>
+
+    <div class="card p-4 border-0 shadow-sm bg-white">
+        <form action="/admin/settings/update" method="POST" class="row g-4">
+            <h5 class="fw-bold text-success border-bottom pb-2 m-0">Homepage Configuration Text</h5>
+            <div class="col-md-12">
+                <label class="form-label fw-semibold">Homepage Welcome Title</label>
+                <input type="text" name="homepage_welcome_title" class="form-control" value="<%= settings.homepage_welcome_title %>" required>
+            </div>
+            <div class="col-md-12">
+                <label class="form-label fw-semibold">Homepage Welcome Subtext</label>
+                <textarea name="homepage_welcome_text" class="form-control" rows="3" required><%= settings.homepage_welcome_text %></textarea>
+            </div>
+
+            <h5 class="fw-bold text-success border-bottom pb-2 m-0 mt-3">About Page Paragraph Context</h5>
+            <div class="col-md-12">
+                <label class="form-label fw-semibold">Main About Summary Block Text</label>
+                <textarea name="about_page_text" class="form-control" rows="4" required><%= settings.about_page_text %></textarea>
+            </div>
+
+            <h5 class="fw-bold text-success border-bottom pb-2 m-0 mt-3">Office Contact Desk Variables</h5>
+            <div class="col-md-12">
+                <label class="form-label fw-semibold">Physical Postal Office Address Location</label>
+                <input type="text" name="contact_address" class="form-control" value="<%= settings.contact_address %>" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Phone Contact Number</label>
+                <input type="text" name="contact_phone" class="form-control" value="<%= settings.contact_phone %>" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Administrative Email Target Connection</label>
+                <input type="email" name="contact_email" class="form-control" value="<%= settings.contact_email %>" required>
+            </div>
+
+            <h5 class="fw-bold text-success border-bottom pb-2 m-0 mt-3">Website Images Control Links (Replace local picture paths)</h5>
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Main Masjid Photo Path</label>
+                <input type="text" name="hero_image_masjid" class="form-control" value="<%= settings.hero_image_masjid %>" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Library Building Photo Path</label>
+                <input type="text" name="hero_image_library" class="form-control" value="<%= settings.hero_image_library %>" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Classroom Photo Path</label>
+                <input type="text" name="hero_image_classroom" class="form-control" value="<%= settings.hero_image_classroom %>" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Main Building / Campus Photo Path</label>
+                <input type="text" name="hero_image_campus" class="form-control" value="<%= settings.hero_image_campus %>" required>
+            </div>
+
+            <div class="col-12 border-top pt-3 text-center">
+                <button type="submit" class="btn btn-success px-5 py-2">Save Website Settings Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

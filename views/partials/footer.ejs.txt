@@ -1,0 +1,19 @@
+<footer class="footer-wrap py-5 mt-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <h5 class="text-warning fw-bold mb-3">Markaz Imam Ahmad bin Hanbal</h5>
+                <p class="small text-white-50">Providing solid education and values rooted in faith, knowledge, and clean moral conduct.</p>
+                <p class="small text-white-50">Location: Karikkankulam, Karaparamba, Kozhikode, Kerala, India</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <h6 class="text-warning fw-bold mb-3">Core Pillars</h6>
+                <p class="small m-0 text-white-50">Knowledge • Character • Faith</p>
+                <p class="small text-white-50 mt-4">&copy; 2026 Markaz Imam Ahmad bin Hanbal. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
