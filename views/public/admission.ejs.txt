@@ -1,0 +1,101 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container my-5" style="max-width: 800px;">
+    <div class="card border-0 shadow rounded-3 overflow-hidden">
+        <div class="bg-success text-white p-4 text-center" style="background-color: var(--deep-green) !important; border-bottom: 4px solid var(--gold-accent);">
+            <h2 class="fw-bold m-0 text-white">Student Admission Form</h2>
+            <p class="small text-warning m-0 mt-1">Please insert truthful operational data details for child registration check pipelines</p>
+        </div>
+        <div class="card-body p-4 p-md-5">
+            <% if (successMessage) { %>
+                <div class="alert alert-success text-center border-0 p-4 shadow-sm fw-bold">
+                    <%= successMessage %>
+                </div>
+            <% } %>
+
+            <form action="/admission" method="POST">
+                <h5 class="text-success fw-bold border-bottom pb-2 mb-3">1. Personal Information</h5>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-12">
+                        <label class="form-label fw-semibold">Full Name</label>
+                        <input type="text" name="full_name" class="form-control" placeholder="Enter student full name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Date of Birth</label>
+                        <input type="date" name="dob" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Parent / Guardian Name</label>
+                        <input type="text" name="parent_name" class="form-control" placeholder="Full name of father or legal guide" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label fw-semibold">Active Phone Number</label>
+                        <input type="tel" name="phone_number" class="form-control" placeholder="e.g. +91 9876543210" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label fw-semibold">Permanent Home Address</label>
+                        <textarea name="address" class="form-control" rows="3" placeholder="Provide complete postal address details" required></textarea>
+                    </div>
+                </div>
+
+                <h5 class="text-success fw-bold border-bottom pb-2 mb-3">2. Previous Studies Background</h5>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Studied in Madrasa Before?</label>
+                        <select name="studied_madrasa" class="form-select" required>
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Previous Institution Name</label>
+                        <input type="text" name="previous_institution" class="form-control" placeholder="Leave empty if none">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Qur'an Memorization Level</label>
+                        <select name="quran_level" class="form-select" required>
+                            <option value="None">None</option>
+                            <option value="Juz Amma">Juz Amma</option>
+                            <option value="1–5 Juz">1–5 Juz</option>
+                            <option value="5–10 Juz">5–10 Juz</option>
+                            <option value="10–20 Juz">10–20 Juz</option>
+                            <option value="20+ Juz">20+ Juz</option>
+                            <option value="Full Hifz">Full Hifz</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Reading Level Capability</label>
+                        <select name="reading_level" class="form-select" required>
+                            <option value="Beginner">Beginner (Struggles with letters)</option>
+                            <option value="Intermediate">Intermediate (Reads with help)</option>
+                            <option value="Advanced">Advanced (Reads fluently alone)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h5 class="text-success fw-bold border-bottom pb-2 mb-3">3. Application Choice</h5>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-12">
+                        <label class="form-label fw-semibold">Program Applying For</label>
+                        <select name="program_applied" class="form-select" required>
+                            <option value="Hifz">Hifz Course</option>
+                            <option value="Islamic Studies">Islamic Studies Course</option>
+                            <option value="Arabic Language">Arabic Language Course</option>
+                        </select>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label fw-semibold">Reason for Joining Our Institution</label>
+                        <textarea name="reason_for_joining" class="form-control" rows="3" placeholder="Brief statement from parents or student explaining entry intent"></textarea>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-gold w-100 py-2 fs-5 shadow-sm">Submit Admission Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

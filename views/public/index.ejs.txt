@@ -1,0 +1,75 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div id="homeHeroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="4000">
+      <div class="zoom-frame" style="height: 480px;">
+        <img src="<%= settings.hero_image_masjid %>" class="d-block w-100 h-100 object-fit-cover" alt="Main Masjid Photo">
+      </div>
+      <div class="carousel-caption d-md-block text-start bg-dark bg-opacity-50 p-4 rounded start-10 end-10 bottom-10">
+        <h2 class="text-warning fw-bold"><%= settings.homepage_welcome_title %></h2>
+        <p><%= settings.homepage_welcome_text %></p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="4000">
+      <div class="zoom-frame" style="height: 480px;">
+        <img src="<%= settings.hero_image_library %>" class="d-block w-100 h-100 object-fit-cover" alt="Library Building Photo">
+      </div>
+      <div class="carousel-caption d-md-block text-start bg-dark bg-opacity-50 p-4 rounded start-10 end-10 bottom-10">
+        <h2 class="text-warning fw-bold">Rich Learning Environments</h2>
+        <p>A well-stocked reference space supporting students in deep research and language study.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#homeHeroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#homeHeroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<div class="container my-5">
+    <div class="row g-5">
+        <div class="col-md-6">
+            <h3 class="section-accent-title mb-4">Latest Notices</h3>
+            <% if (notices && notices.length > 0) { %>
+                <div class="list-group shadow-sm">
+                    <% notices.forEach(notice => { %>
+                        <div class="list-group-item list-group-item-action p-3">
+                            <h5 class="mb-1 text-success fw-bold"><%= notice.title %></h5>
+                            <p class="mb-1 text-muted small"><%= notice.content %></p>
+                            <small class="text-warning fw-semibold">Posted: <%= new Date(notice.created_at).toLocaleDateString() %></small>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } else { %>
+                <p class="text-muted bg-light p-3 rounded">No announcements or notices published at this moment.</p>
+            <% } %>
+        </div>
+
+        <div class="col-md-6">
+            <h3 class="section-accent-title mb-4">Upcoming Events</h3>
+            <% if (events && events.length > 0) { %>
+                <div class="row g-3">
+                    <% events.forEach(event => { %>
+                        <div class="col-12">
+                            <div class="card border-start border-success border-4 shadow-sm h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title text-success fw-bold"><%= event.title %></h5>
+                                    <h6 class="card-subtitle mb-2 text-warning fw-bold">Date: <%= new Date(event.event_date).toLocaleDateString() %></h6>
+                                    <p class="card-text text-muted small"><%= event.description %></p>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } else { %>
+                <p class="text-muted bg-light p-3 rounded">No planned events on schedule current day.</p>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

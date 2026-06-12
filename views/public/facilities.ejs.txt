@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container my-5">
+    <h2 class="section-accent-title text-center mx-auto mb-5" style="max-width: max-content;">Campus Facilities</h2>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm overflow-hidden h-100">
+                <div class="zoom-frame" style="height: 240px;">
+                    <img src="<%= settings.hero_image_classroom %>" class="w-100 h-100 object-fit-cover" alt="Classroom Photo" onerror="this.src='https://placehold.co/600x300/0A5C36/FFF?text=Classroom'">
+                </div>
+                <div class="card-body p-4">
+                    <h4 class="text-success fw-bold">Comfortable Learning Classrooms</h4>
+                    <p class="text-muted small m-0">Well ventilated, safe and spacious layout spaces planned carefully to support distraction free academic instruction hours daily.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm overflow-hidden h-100">
+                <div class="zoom-frame" style="height: 240px;">
+                    <img src="<%= settings.hero_image_library %>" class="w-100 h-100 object-fit-cover" alt="Library Building Photo" onerror="this.src='https://placehold.co/600x300/0A5C36/FFF?text=Library'">
+                </div>
+                <div class="card-body p-4">
+                    <h4 class="text-success fw-bold">The Reference Space / Library</h4>
+                    <p class="text-muted small m-0">Houses vital collections of authentic reference books helping secondary level students extract knowledge clean and safe.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>s

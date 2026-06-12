@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container my-5">
+    <h2 class="section-accent-title text-center mx-auto mb-5" style="max-width: max-content;">Educational Programs</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 zoom-frame">
+                <div class="card-body p-4">
+                    <div class="text-success mb-3 fw-bold fs-4">Hifz Program</div>
+                    <p class="text-muted">Structured layout assisting children in precise and safe memorization of the Holy Qur'an with clear articulation practice rules.</p>
+                    <a href="/admission" class="btn btn-gold btn-sm mt-3">Apply for Admission</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 zoom-frame">
+                <div class="card-body p-4">
+                    <div class="text-success mb-3 fw-bold fs-4">Islamic Studies</div>
+                    <p class="text-muted">Foundational teachings covering necessary understanding of faith principles, legal guidance basics, and lifestyle character manners.</p>
+                    <a href="/admission" class="btn btn-gold btn-sm mt-3">Apply for Admission</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0 zoom-frame">
+                <div class="card-body p-4">
+                    <div class="text-success mb-3 fw-bold fs-4">Arabic Language</div>
+                    <p class="text-muted">Step by step comprehensive training pathways built carefully to help regular speakers read, interpret, and write Classical Arabic safely.</p>
+                    <a href="/admission" class="btn btn-gold btn-sm mt-3">Apply for Admission</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
